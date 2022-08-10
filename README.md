@@ -3,6 +3,7 @@
 </h1>
 
 - React
+- UseContext
 - React-query
 - Mui
 - TailwindCss
