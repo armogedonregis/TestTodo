@@ -7,9 +7,11 @@ import { useNews } from "../newsContext";
 
 // Бегущая строка
 
+// --duration: 1000s !important;  для 100 постов
+
 const Container = styled(Marquee)`
 & .marquee {
-    --duration: 1000s !important;
+    --duration: 100s !important;
 }
 ${tw`
     mb-[32px]
@@ -32,7 +34,7 @@ export const News: React.FC = () => {
   const {isLoading,
     data: response,
     error} = useQuery(['title'], () => NewsService.getAll(), );
-
+    
     const { checked } = useNews();
 
   return (
@@ -43,10 +45,10 @@ export const News: React.FC = () => {
         gradient={false}
         >
         {isLoading ? <div>Loading...</div> : 
-          response?.data.articles.map((article: any) => {
+          response?.data.results.map((title: any) => {
             return (
               <Item key={Math.random()}>
-                {article.title}
+                {title.title}
               </Item>
               )
           })}

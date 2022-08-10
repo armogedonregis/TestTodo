@@ -1,3 +1,4 @@
+import ErrorBoundary from "../ErrorBoundary";
 import { Header } from "../header";
 import Layout from "../layout";
 import { List } from "../list";
@@ -11,8 +12,12 @@ export default function App() {
       <Wrapper>
       <NewsProvider>
         <Header />
-        <List />
-        <News />
+        <ErrorBoundary>
+          <List />
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <News />
+        </ErrorBoundary>
       </NewsProvider>
       </Wrapper>
     </Layout>
