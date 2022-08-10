@@ -2,6 +2,12 @@
   Тестовое задание на должность "Frontend-разработчик"
 </h1>
 
+- React
+- React-query
+- Mui
+- TailwindCss
+- Styled-components
+
 1.  **Установка пакетов.**
 
     ```
